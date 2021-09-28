@@ -6,19 +6,19 @@ import { changeInput, insert, toggle, remove } from '../modules/todos';
 const TodosContainer = ({
   input,
   todos,
-  onChangeInput,
-  onInsert,
-  onToggle,
-  onRemove,
+  changeInput,
+  insert,
+  toggle,
+  remove,
 }) => {
   return (
     <Todos
       input={input}
       todos={todos}
-      onChangeInput={onChangeInput}
-      onInsert={onInsert}
-      onToggle={onToggle}
-      onRemove={onRemove}
+      onChangeInput={changeInput}
+      onInsert={insert}
+      onToggle={toggle}
+      onRemove={remove}
     />
   );
 };

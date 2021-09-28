@@ -11,7 +11,7 @@ export const changeInput = (input) => ({
 let id = 3;
 export const insert = (text) => ({
   type: INSERT,
-  todos: {
+  todo: {
     id: id++,
     text,
     done: false,
@@ -47,7 +47,7 @@ const initialState = {
 function todos(state = initialState, action) {
   switch (action.type) {
     case CHANGE_INPUT:
-      return { ...state, input: action.type };
+      return { ...state, input: action.input };
     case INSERT:
       return { ...state, todos: state.todos.concat(action.todo) };
     case TOGGLE:

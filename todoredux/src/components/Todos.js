@@ -7,8 +7,9 @@ const TodoItem = ({ todo, onToggle, onRemove }) => {
         type="checkbox"
         checked={todo.done}
         onClick={() => onToggle(todo.id)}
+        readOnly={true}
       />
-      <span>예제 텍스트</span>
+      <span>{todo.text}</span>
       <button onClick={() => onRemove(todo.id)}>삭제</button>
     </div>
   );
@@ -39,7 +40,12 @@ const Todos = ({
       </form>
       <div>
         {todos.map((todo) => (
-          <TodoItem todo={todo} onToggle={onToggle} onRemove={onRemove} />
+          <TodoItem
+            todo={todo}
+            key={todo.id}
+            onToggle={onToggle}
+            onRemove={onRemove}
+          />
         ))}
       </div>
     </div>
